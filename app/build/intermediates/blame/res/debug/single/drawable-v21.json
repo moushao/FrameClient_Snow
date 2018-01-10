@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "G:\\AndroidStudioProjects\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\HP\\.android\\build-cache\\4d3d938bbf82a875be0d24cc50396993a6f18968\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.2.0\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.2.0\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "G:\\AndroidStudioProjects\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\HP\\.android\\build-cache\\4d3d938bbf82a875be0d24cc50396993a6f18968\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "G:\\AndroidStudioProjects\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\HP\\.android\\build-cache\\4d3d938bbf82a875be0d24cc50396993a6f18968\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.2.0\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.2.0\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "G:\\AndroidStudioProjects\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\HP\\.android\\build-cache\\4d3d938bbf82a875be0d24cc50396993a6f18968\\output\\res\\drawable-v21\\notification_action_background.xml"
+    }
+]

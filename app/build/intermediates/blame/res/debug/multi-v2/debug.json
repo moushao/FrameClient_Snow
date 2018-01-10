@@ -1,0 +1,338 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\values-sw720dp-land-v13_values-sw720dp-land-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\src\\main\\res\\values-sw720dp-land\\dimens.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "205",
+                        "endColumns": "58",
+                        "endOffsets": "259"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "58",
+                        "endOffsets": "109"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\workspace\\xueliang\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13_values-w820dp-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\workspace\\xueliang\\FrameClient_android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "295",
+                        "endColumns": "57",
+                        "endOffsets": "348"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "57",
+                        "endOffsets": "108"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\values-v14_values-v14.arsc.flat",
+            "map": [
+                {
+                    "source": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\src\\main\\res\\values-v14\\styles.xml",
+                    "from": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "225",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "373"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "201"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13_values-w820dp-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "295",
+                        "endColumns": "57",
+                        "endOffsets": "348"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "57",
+                        "endOffsets": "108"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\workspace\\xueliang\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\values-v14_values-v14.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\workspace\\xueliang\\FrameClient_android\\app\\src\\main\\res\\values-v14\\styles.xml",
+                    "from": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "225",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "373"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "201"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\workspace\\xueliang\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\workspace\\xueliang\\FrameClient_android\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "92,151",
+                        "endColumns": "57,55",
+                        "endOffsets": "145,202"
+                    },
+                    "to": {
+                        "startLines": "12,13",
+                        "startColumns": "4,4",
+                        "startOffsets": "526,584",
+                        "endColumns": "57,55",
+                        "endOffsets": "579,635"
+                    }
+                },
+                {
+                    "source": "D:\\workspace\\xueliang\\FrameClient_android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "6,15",
+                        "startColumns": "4,4",
+                        "startOffsets": "191,522",
+                        "endLines": "12,18",
+                        "endColumns": "12,12",
+                        "endOffsets": "481,735"
+                    },
+                    "to": {
+                        "startLines": "55,62",
+                        "startColumns": "4,4",
+                        "startOffsets": "2404,2695",
+                        "endLines": "61,65",
+                        "endColumns": "12,12",
+                        "endOffsets": "2690,2905"
+                    }
+                },
+                {
+                    "source": "D:\\workspace\\xueliang\\FrameClient_android\\app\\src\\main\\res\\values\\color.xml",
+                    "from": {
+                        "startLines": "2,6,4,5,7,10,11,3,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "57,267,153,209,321,454,499,106,365,407",
+                        "endColumns": "47,52,54,56,42,43,47,45,40,45",
+                        "endOffsets": "100,315,203,261,359,493,542,147,401,448"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,102,154,208,264,306,349,396,441,481",
+                        "endColumns": "46,51,53,55,41,42,46,44,39,44",
+                        "endOffsets": "97,149,203,259,301,344,391,436,476,521"
+                    }
+                },
+                {
+                    "source": "D:\\workspace\\xueliang\\FrameClient_android\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "16,15,25,17,35,5,39,3,31,42,24,28,6,14,34,40,10,7,33,32,8,29,18,13,27,37,23,38,41,20,21,11,19,30,9,22,12,4,36,43,26",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "650,609,1039,692,1445,139,1623,56,1295,1749,990,1160,192,569,1409,1660,396,245,1374,1338,297,1206,759,513,1122,1534,948,1578,1704,835,873,433,799,1247,349,912,472,98,1489,1785,1078",
+                        "endColumns": "41,40,38,66,43,52,36,41,42,35,48,45,52,39,35,43,36,51,34,35,51,40,39,55,37,43,41,44,44,37,38,38,35,47,46,35,40,40,44,34,43",
+                        "endOffsets": "687,645,1073,754,1484,187,1655,93,1333,1780,1034,1201,240,604,1440,1699,428,292,1404,1369,344,1242,794,564,1155,1573,985,1618,1744,868,907,467,830,1290,391,943,508,134,1529,1815,1117"
+                    },
+                    "to": {
+                        "startLines": "14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "640,682,723,762,829,873,926,963,1005,1048,1084,1133,1179,1232,1272,1308,1352,1389,1441,1476,1512,1564,1605,1645,1701,1739,1783,1825,1870,1915,1953,1992,2031,2067,2115,2162,2198,2239,2280,2325,2360",
+                        "endColumns": "41,40,38,66,43,52,36,41,42,35,48,45,52,39,35,43,36,51,34,35,51,40,39,55,37,43,41,44,44,37,38,38,35,47,46,35,40,40,44,34,43",
+                        "endOffsets": "677,718,757,824,868,921,958,1000,1043,1079,1128,1174,1227,1267,1303,1347,1384,1436,1471,1507,1559,1600,1640,1696,1734,1778,1820,1865,1910,1948,1987,2026,2062,2110,2157,2193,2234,2275,2320,2355,2399"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\src\\main\\res\\values\\color.xml",
+                    "from": {
+                        "startLines": "2,6,4,5,7,10,11,3,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "57,267,153,209,321,454,499,106,365,407",
+                        "endColumns": "47,52,54,56,42,43,47,45,40,45",
+                        "endOffsets": "100,315,203,261,359,493,542,147,401,448"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,102,154,208,264,306,349,396,441,481",
+                        "endColumns": "46,51,53,55,41,42,46,44,39,44",
+                        "endOffsets": "97,149,203,259,301,344,391,436,476,521"
+                    }
+                },
+                {
+                    "source": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "92,151",
+                        "endColumns": "57,55",
+                        "endOffsets": "145,202"
+                    },
+                    "to": {
+                        "startLines": "12,13",
+                        "startColumns": "4,4",
+                        "startOffsets": "526,584",
+                        "endColumns": "57,55",
+                        "endOffsets": "579,635"
+                    }
+                },
+                {
+                    "source": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "16,15,25,17,35,5,39,3,31,42,24,28,6,14,34,40,10,7,33,32,8,29,18,13,27,37,23,38,41,20,21,11,19,30,9,22,12,4,36,43,26",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "650,609,1039,692,1445,139,1623,56,1295,1749,990,1160,192,569,1409,1660,396,245,1374,1338,297,1206,759,513,1122,1534,948,1578,1704,835,873,433,799,1247,349,912,472,98,1489,1785,1078",
+                        "endColumns": "41,40,38,66,43,52,36,41,42,35,48,45,52,39,35,43,36,51,34,35,51,40,39,55,37,43,41,44,44,37,38,38,35,47,46,35,40,40,44,34,43",
+                        "endOffsets": "687,645,1073,754,1484,187,1655,93,1333,1780,1034,1201,240,604,1440,1699,428,292,1404,1369,344,1242,794,564,1155,1573,985,1618,1744,868,907,467,830,1290,391,943,508,134,1529,1815,1117"
+                    },
+                    "to": {
+                        "startLines": "14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "640,682,723,762,829,873,926,963,1005,1048,1084,1133,1179,1232,1272,1308,1352,1389,1441,1476,1512,1564,1605,1645,1701,1739,1783,1825,1870,1915,1953,1992,2031,2067,2115,2162,2198,2239,2280,2325,2360",
+                        "endColumns": "41,40,38,66,43,52,36,41,42,35,48,45,52,39,35,43,36,51,34,35,51,40,39,55,37,43,41,44,44,37,38,38,35,47,46,35,40,40,44,34,43",
+                        "endOffsets": "677,718,757,824,868,921,958,1000,1043,1079,1128,1174,1227,1267,1303,1347,1384,1436,1471,1507,1559,1600,1640,1696,1734,1778,1820,1865,1910,1948,1987,2026,2062,2110,2157,2193,2234,2275,2320,2355,2399"
+                    }
+                },
+                {
+                    "source": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "6,15",
+                        "startColumns": "4,4",
+                        "startOffsets": "191,522",
+                        "endLines": "12,18",
+                        "endColumns": "12,12",
+                        "endOffsets": "481,735"
+                    },
+                    "to": {
+                        "startLines": "55,62",
+                        "startColumns": "4,4",
+                        "startOffsets": "2404,2695",
+                        "endLines": "61,65",
+                        "endColumns": "12,12",
+                        "endOffsets": "2690,2905"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\values-v11_values-v11.arsc.flat",
+            "map": [
+                {
+                    "source": "E:\\Workspace\\Pvirtech\\FrameClient_android\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "182",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "316"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "187"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\workspace\\xueliang\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\values-sw720dp-land-v13_values-sw720dp-land-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\workspace\\xueliang\\FrameClient_android\\app\\src\\main\\res\\values-sw720dp-land\\dimens.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "205",
+                        "endColumns": "58",
+                        "endOffsets": "259"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "58",
+                        "endOffsets": "109"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\workspace\\xueliang\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\values-v11_values-v11.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\workspace\\xueliang\\FrameClient_android\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "182",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "316"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "187"
+                    }
+                }
+            ]
+        }
+    ]
+}

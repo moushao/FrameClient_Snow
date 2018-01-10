@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "E:\\develop\\android\\as\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\menu\\login.xml",
+        "source": "E:\\develop\\android\\as\\FrameClient_android\\app\\src\\main\\res\\menu\\login.xml"
+    },
+    {
+        "merged": "G:\\AndroidStudioProjects\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\menu\\login.xml",
+        "source": "G:\\AndroidStudioProjects\\FrameClient_android\\app\\src\\main\\res\\menu\\login.xml"
+    },
+    {
+        "merged": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\menu\\login.xml",
+        "source": "F:\\ReflyProject\\FrameClient_android\\app\\src\\main\\res\\menu\\login.xml"
+    }
+]

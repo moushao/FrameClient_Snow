@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:src="@drawable/bg_2"
+            android:scaleType="fitXY"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/headerbk" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2">
+                    <Button
+                        android:id="@+id/btn_menu"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_resource_button_style"
+                        android:gravity="center"
+                        android:text="@string/menu"
+                        android:textColor="@color/white"
+                        android:visibility="visible"
+                        android:textSize="14dp" >
+                    </Button>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="0.2">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/list"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" >
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="0.2">
+                    <Button
+                        android:id="@+id/btn_back"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_resource_button_style"
+                        android:gravity="center"
+                        android:text="@string/web"
+                        android:textColor="@color/white"
+                        android:visibility="visible"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="match_parent"
+                >
+
+                <ListView android:id="@+id/list"
+                    android:fastScrollEnabled="true"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fadingEdge="none"
+                    android:divider="@null"
+                    android:cacheColorHint="#000000"
+                    android:scrollbarFadeDuration="0"
+                    android:fadeScrollbars="false"
+                    android:scrollingCache="false" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:src="@drawable/logo"
+                    android:layout_margin="10dp"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="手机视屏监控系统"
+                    android:textSize="20sp"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp">
+
+                <ListView
+                    android:id="@+id/list_view"
+                    android:scrollbars="none"
+                    android:divider="@null"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:listSelector="@drawable/bg_button_focused"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+                </ListView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:id="@+id/frame_layout"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="0dp">
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/btn_110"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="110"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/sle_btn_bottom"
+                            android:layout_height="wrap_content" />
+
+                        <Button
+                            android:textColor="@color/white"
+                            android:id="@+id/btn_112"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="112"
+                            android:padding="10dp"
+                            android:textSize="20sp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/sle_btn_bottom"
+                            android:layout_height="wrap_content" />
+
+                        <Button
+                            android:textColor="@color/white"
+                            android:id="@+id/btn_119"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="119"
+                            android:textSize="20sp"
+                            android:padding="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/sle_btn_bottom"
+                            android:layout_height="wrap_content" />
+
+                        <Button
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:id="@+id/btn_jinbao"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="警报"
+                            android:padding="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/sle_btn_bottom"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.frameclient.widget.ScrollingTextView
+                android:id="@+id/txt_bottom"
+                android:layout_width="match_parent"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:padding="5dp"
+                android:textSize="16sp"
+                android:background="@drawable/sle_pao_ma_deng"
+                android:textColor="@color/white"
+                android:text="美国政府12月18日发表《国家安全战略报告》，罔顾事实，渲染炒作中国国防现代化建设，质疑中国军力发展意图，与和平与发展的时代主题和中美两国关系发展大势背道而驰。"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "G:\\AndroidStudioProjects\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\HP\\.android\\build-cache\\4d3d938bbf82a875be0d24cc50396993a6f18968\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.2.0\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "F:\\ReflyProject\\FrameClient_android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.2.0\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "G:\\AndroidStudioProjects\\FrameClient_android\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\HP\\.android\\build-cache\\4d3d938bbf82a875be0d24cc50396993a6f18968\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    }
+]

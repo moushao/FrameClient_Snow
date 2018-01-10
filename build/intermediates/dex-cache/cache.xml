@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="F:\ReflyProject\FrameClient_android\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5a2386ad9bfff580b206a7fe305cdccd00798159">
+        <dex dex="F:\ReflyProject\FrameClient_android\app\build\intermediates\pre-dexed\debug\io.reactivex-rxandroid-1.2.1_6075a04ed50e4a375e60694500defecf38632741.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator.9UAHN6S6CGXFPQ3.002\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.3.1\99ce730034c6f5aaed710d1e0e9df95e8714ed5f\logging-interceptor-3.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="99ce730034c6f5aaed710d1e0e9df95e8714ed5f">
+        <dex dex="F:\ReflyProject\FrameClient_android\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.3.1_e2022f60a29d6818a96111b9ceeab90aeeaf91e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator.9UAHN6S6CGXFPQ3.002\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="F:\ReflyProject\FrameClient_android\app\build\intermediates\pre-dexed\debug\gson-2.6.1_2e58a7f0bde579fba680617ecd26ce7bc0690e4e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator.9UAHN6S6CGXFPQ3.002\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava\2.0.2\a60c039ba54c73d1133b72178e1b04133c73d13d\adapter-rxjava-2.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a60c039ba54c73d1133b72178e1b04133c73d13d">
+        <dex dex="F:\ReflyProject\FrameClient_android\app\build\intermediates\pre-dexed\debug\adapter-rxjava-2.0.2_652de9531efc8354741ad5671b23925df61cc0d3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator.9UAHN6S6CGXFPQ3.002\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-scalars\2.0.2\a3bfef8122db8c395b4dc7c9845e27829bf6a6f9\converter-scalars-2.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a3bfef8122db8c395b4dc7c9845e27829bf6a6f9">
+        <dex dex="F:\ReflyProject\FrameClient_android\app\build\intermediates\pre-dexed\debug\converter-scalars-2.0.2_359e7a40659c182b172cc2bcd0e1f51518ab2745.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator.9UAHN6S6CGXFPQ3.002\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="F:\ReflyProject\FrameClient_android\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.2_601c198c1f11aa3c9e07a2052c31f702b963f136.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator.9UAHN6S6CGXFPQ3.002\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.2\43eeae0b9fb087bb3194ba59ab63a38a32fbf3e\retrofit-2.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="F:\ReflyProject\FrameClient_android\app\build\intermediates\pre-dexed\debug\retrofit-2.0.2_2d963ca76606a6591f4cf4716ce8c4fc4fbbc119.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator.9UAHN6S6CGXFPQ3.002\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="F:\ReflyProject\FrameClient_android\app\build\intermediates\pre-dexed\debug\okio-1.8.0_02165772acfe54e7738bd26e26f6cdfe25eb3232.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator.9UAHN6S6CGXFPQ3.002\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.6\2586312cd2b8a511e4c6236736f5a039fc0f2273\rxjava-1.1.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2586312cd2b8a511e4c6236736f5a039fc0f2273">
+        <dex dex="F:\ReflyProject\FrameClient_android\app\build\intermediates\pre-dexed\debug\rxjava-1.1.6_9ea7d138651d05669e945f1d00e292d158c086f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator.9UAHN6S6CGXFPQ3.002\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.1\19047bdb6a4fc00a44124f64ca98e88fc204e7e3\okhttp-3.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="19047bdb6a4fc00a44124f64ca98e88fc204e7e3">
+        <dex dex="F:\ReflyProject\FrameClient_android\app\build\intermediates\pre-dexed\debug\okhttp-3.3.1_ca47a8a7f65400dbbd98ca6710c13734db899464.jar" />
+    </item>
+
+</items>

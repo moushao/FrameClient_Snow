@@ -1,0 +1,14 @@
+package com.frameclient.utils;
+
+/**
+ * Created by Zhang on 2017/12/20.
+ */
+
+public class Constants {
+
+    public static final String IP_ADDRESS ="118.112.185.226:8898";
+    public static final String LOGIN_NAME ="sa";
+    public static final String LOGIN_PWD ="sa";
+
+
+}
