@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.frameclient.adapter.CommonListAdapter;
 import com.frameclient.adapter.ViewHolder;
@@ -64,8 +65,14 @@ public class NewsListActivity extends Activity {
                 newsList.addAll(list);
                 adapter.notifyDataSetChanged();
             }
+
+            @Override
+            public void getNewsListFail() {
+                Toast.makeText(NewsListActivity.this, "，新闻列表获取失败", Toast.LENGTH_LONG).show();
+
+            }
         });
 
-        apiRequest.getNewsList();
+        apiRequest.getAllNewsList();
     }
 }

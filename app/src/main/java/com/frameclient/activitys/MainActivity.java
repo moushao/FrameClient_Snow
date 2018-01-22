@@ -33,6 +33,7 @@ import com.frameclient.adapter.CommonListAdapter;
 import com.frameclient.adapter.ResourceAdapter;
 import com.frameclient.adapter.ViewHolder;
 import com.frameclient.utils.ApiRequest;
+import com.frameclient.utils.Constants;
 import com.frameclient.utils.NewsListBean;
 import com.frameclient.utils.ResourceItemInfo;
 import com.frameclient.utils.SoftResource;
@@ -171,7 +172,8 @@ public class MainActivity extends Activity {
                                 SoftResource.insertAdapterElem(info);
 
                                 // Log.v(TAG,
-                                // "set "+i+" level "+info.level+" isShow true add into s_list size "+SoftResource.getAdapterListSize());
+                                // "set "+i+" level "+info.level+" isShow true add into s_list size "+SoftResource
+                                // .getAdapterListSize());
                             }
                         }
 
@@ -198,8 +200,8 @@ public class MainActivity extends Activity {
                         SoftResource.isGetResource = true;
                         listadapter.notifyDataSetChanged();
                         Log.e(TAG, SoftResource.getList().toString());
-//                        Toast.makeText(MainActivity.this, "请求资源成功!",
-//                                Toast.LENGTH_SHORT).show();
+                        //                        Toast.makeText(MainActivity.this, "请求资源成功!",
+                        //                                Toast.LENGTH_SHORT).show();
                     }
 
                     break;
@@ -210,6 +212,7 @@ public class MainActivity extends Activity {
             }
         }
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -235,7 +238,8 @@ public class MainActivity extends Activity {
 
             if (isLogin) {
 
-                listadapter = new ResourceAdapter(mcontext, handler, SoftResource.getList(), SoftResource.getAdapterList());
+                listadapter = new ResourceAdapter(mcontext, handler, SoftResource.getList(), SoftResource
+                        .getAdapterList());
 
                 view_listview.setAdapter(listadapter);
 
@@ -270,12 +274,12 @@ public class MainActivity extends Activity {
                 apiRequest.setHttpResultCallBack(new ApiRequest.HttpResultCallBack() {
                     @Override
                     public void pushAlarmSuccess() {
-                        Toast.makeText(MainActivity.this,"报警成功",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "报警成功", Toast.LENGTH_LONG).show();
                     }
 
                     @Override
                     public void pushAlarmFail() {
-                        Toast.makeText(MainActivity.this,"报警失败，请重试",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "报警失败，请重试", Toast.LENGTH_LONG).show();
                     }
 
                     @Override
@@ -284,8 +288,14 @@ public class MainActivity extends Activity {
                         for (int i = 0; i < list.size(); i++) {
                             news.append(list.get(i).getTitle()).append("                         ");
                         }
-                        Log.e("http",news.toString());
+                        Log.e("http", news.toString());
                         txt_bottom.setText(news.toString());
+                    }
+
+                    @Override
+                    public void getNewsListFail() {
+                        Toast.makeText(MainActivity.this, "，新闻列表获取失败", Toast.LENGTH_LONG).show();
+
                     }
                 });
 
@@ -401,7 +411,6 @@ public class MainActivity extends Activity {
     private ApiRequest apiRequest;
 
 
-  
     private void setFragment(ResourceItemInfo resourceItemInfo, int position) {
 
         android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -410,7 +419,7 @@ public class MainActivity extends Activity {
         SoftResource.camera_pos = position;
 
         if (videoFragment == null) {
-//        videoFragment = null;
+            //        videoFragment = null;
             videoFragment = new VideoFragment();
             transaction.replace(R.id.frame_layout, videoFragment);
             transaction.addToBackStack(null);
@@ -554,14 +563,14 @@ public class MainActivity extends Activity {
         view_listview = (ListView) findViewById(R.id.list);
         list_view = (ListView) findViewById(R.id.list_view);
         txt_bottom = (ScrollingTextView) findViewById(R.id.txt_bottom);
-//        txt_bottom.setSelected(true);
+        //        txt_bottom.setSelected(true);
 
         Button btn110 = (Button) findViewById(R.id.btn_110);
         Button btn112 = (Button) findViewById(R.id.btn_112);
         Button btn119 = (Button) findViewById(R.id.btn_119);
         Button btnJinBao = (Button) findViewById(R.id.btn_jinbao);
         TextView config = (TextView) findViewById(R.id.config);
-        
+
 
         btn110.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -577,7 +586,7 @@ public class MainActivity extends Activity {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int which) {// 确定按钮的响应事件
-                                apiRequest.postAlarm("成都市",1);
+                                apiRequest.postAlarm(Constants.LOGIN_NAME, 1);
                             }
 
                         })
@@ -606,7 +615,7 @@ public class MainActivity extends Activity {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int which) {// 确定按钮的响应事件
-                                apiRequest.postAlarm("成都市",2);
+                                apiRequest.postAlarm(Constants.LOGIN_NAME, 2);
                             }
 
                         })
@@ -635,7 +644,7 @@ public class MainActivity extends Activity {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int which) {// 确定按钮的响应事件
-                                apiRequest.postAlarm("成都市",3);
+                                apiRequest.postAlarm(Constants.LOGIN_NAME, 3);
                             }
 
                         })
@@ -664,7 +673,7 @@ public class MainActivity extends Activity {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int which) {// 确定按钮的响应事件
-                                apiRequest.postAlarm("成都市",4);
+                                apiRequest.postAlarm(Constants.LOGIN_NAME, 4);
                             }
 
                         })
@@ -690,7 +699,7 @@ public class MainActivity extends Activity {
         config.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,IPActivity.class));
+                startActivity(new Intent(MainActivity.this, IPActivity.class));
             }
         });
 
@@ -704,7 +713,7 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 setFragment(resList.get(i), i);
-//                Toast.makeText(MainActivity.this,i+"",Toast.LENGTH_SHORT).show();
+                //                Toast.makeText(MainActivity.this,i+"",Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -764,7 +773,6 @@ public class MainActivity extends Activity {
                 isShow = true;
             }
 
-            
 
         }
     };

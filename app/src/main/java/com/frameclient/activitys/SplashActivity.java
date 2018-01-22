@@ -32,9 +32,9 @@ import com.frameclient.utils.Constants;
 public class SplashActivity extends Activity {
 
 
-    private String username;
-    private String password;
-    private String ipaddr;
+    //    private String username;
+    //    private String password;
+    //    private String ipaddr;
 
     private EditText view_username;
     private EditText view_password;
@@ -42,13 +42,17 @@ public class SplashActivity extends Activity {
     private Button view_login;
     private CheckBox view_remember;
     private CheckBox view_autologin;
-    private LinearLayout login_layout;
+    private RelativeLayout login_layout;
     private RelativeLayout init_layout;
 
 
     private static final String TAG = "FrmaeDebug";
     private static final int MENU_EXIT = Menu.FIRST - 1;
     private static final int MENU_ABOUT = Menu.FIRST;
+    /**
+     * 判断是否本地有用户信息,如果有,则直接登录,如果没有,则显示登录界面
+     */
+    private boolean hasInfo = false;
 
     /**
      * 用来操作SharePreferences的标识
@@ -88,6 +92,7 @@ public class SplashActivity extends Activity {
                     }
                     Toast.makeText(SplashActivity.this, "没登录!", Toast.LENGTH_SHORT)
                             .show();
+                    changeLayout();
                     break;
                 case 2:
                     if (proDialog != null) {
@@ -95,6 +100,7 @@ public class SplashActivity extends Activity {
                     }
                     Toast.makeText(SplashActivity.this, "网络错误!", Toast.LENGTH_SHORT)
                             .show();
+                    changeLayout();
                     break;
                 case 10:
                     if (proDialog != null) {
@@ -102,6 +108,7 @@ public class SplashActivity extends Activity {
                     }
                     Toast.makeText(SplashActivity.this, "没初始化!", Toast.LENGTH_SHORT)
                             .show();
+                    changeLayout();
                     break;
                 case 11:
                     if (proDialog != null) {
@@ -109,6 +116,7 @@ public class SplashActivity extends Activity {
                     }
                     Toast.makeText(SplashActivity.this, "参数错误!", Toast.LENGTH_SHORT)
                             .show();
+                    changeLayout();
                     break;
                 case 12:
                     if (proDialog != null) {
@@ -116,6 +124,7 @@ public class SplashActivity extends Activity {
                     }
                     Toast.makeText(SplashActivity.this, "数据错误!", Toast.LENGTH_SHORT)
                             .show();
+                    changeLayout();
                     break;
                 case 1001:
                     if (proDialog != null) {
@@ -123,6 +132,7 @@ public class SplashActivity extends Activity {
                     }
                     Toast.makeText(SplashActivity.this, "数据库访问错误!",
                             Toast.LENGTH_SHORT).show();
+                    changeLayout();
                     break;
                 case 1101:
                     if (proDialog != null) {
@@ -137,6 +147,7 @@ public class SplashActivity extends Activity {
                     }
                     Toast.makeText(SplashActivity.this, "没找到转码服务器!",
                             Toast.LENGTH_SHORT).show();
+                    changeLayout();
                     break;
                 case 1103:
                     if (proDialog != null) {
@@ -158,6 +169,8 @@ public class SplashActivity extends Activity {
                     }
                     Toast.makeText(SplashActivity.this, "连接流媒体或转码服务器失败!",
                             Toast.LENGTH_SHORT).show();
+                    changeLayout();
+
                     break;
                 case 0:
                     if (proDialog != null) {
@@ -198,6 +211,8 @@ public class SplashActivity extends Activity {
                     view_username.setText("");
                     view_password.setText("");
                     clearShareUserInfo(false, true, true);
+                    changeLayout();
+
                     break;
                 case -2:
                     if (proDialog != null) {
@@ -207,6 +222,8 @@ public class SplashActivity extends Activity {
                             .show();
                     view_password.setText("");
                     clearShareUserInfo(false, false, true);
+                    changeLayout();
+
                     break;
                 case -3:
                     if (proDialog != null) {
@@ -214,6 +231,8 @@ public class SplashActivity extends Activity {
                     }
                     Toast.makeText(SplashActivity.this, "服务器无法连接!",
                             Toast.LENGTH_SHORT).show();
+                    changeLayout();
+
                     break;
                 case -4:
                     if (proDialog != null) {
@@ -221,6 +240,7 @@ public class SplashActivity extends Activity {
                     }
                     Toast.makeText(SplashActivity.this, "获取资源失败!",
                             Toast.LENGTH_SHORT).show();
+                    changeLayout();
                     break;
                 case -5:
                     if (proDialog != null) {
@@ -249,6 +269,7 @@ public class SplashActivity extends Activity {
                     }
                     Toast.makeText(SplashActivity.this, "登陆超时!", Toast.LENGTH_SHORT)
                             .show();
+                    changeLayout();
                     break;
                 default:
                     break;
@@ -256,6 +277,11 @@ public class SplashActivity extends Activity {
             }
         }
     };
+
+    private void changeLayout() {
+        init_layout.setVisibility(View.GONE);
+        login_layout.setVisibility(View.VISIBLE);
+    }
 
     private BroadcastReceiver broadcastRec = new BroadcastReceiver() {
         @Override
@@ -303,19 +329,16 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_splash);
         findViewsById();
         setListener();
-        initView(false);
-
+        getSharedData();
         registerBroadcastReceiver();
 
-        //无用信息显示登录界面，有用户信息直接登录
-        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password) || TextUtils.isEmpty(ipaddr)) {
-            view_ipaddr.setText(Constants.IP_ADDRESS);
-            view_username.setText(Constants.LOGIN_NAME);
-            view_password.setText(Constants.LOGIN_PWD);
-            login_layout.setVisibility(View.VISIBLE);
-        } else {
+        //无用户信息显示登录界面，有用户信息直接登录
+        if (hasInfo) {
             init_layout.setVisibility(View.VISIBLE);
             login();
+        } else {
+            setData(false);
+            login_layout.setVisibility(View.VISIBLE);
         }
         //
 
@@ -385,7 +408,7 @@ public class SplashActivity extends Activity {
         view_login = (Button) findViewById(R.id.btn_login);
         view_remember = (CheckBox) findViewById(R.id.remember);
         view_autologin = (CheckBox) findViewById(R.id.autologin);
-        login_layout = (LinearLayout) findViewById(R.id.login_layout);
+        login_layout = (RelativeLayout) findViewById(R.id.login_layout);
         init_layout = (RelativeLayout) findViewById(R.id.init_layout);
     }
 
@@ -394,27 +417,36 @@ public class SplashActivity extends Activity {
      *
      * @param isRememberMe
      */
-    private void initView(boolean isRememberMe) {
-
-
-        SharedPreferences share = getSharedPreferences(SHARE_LOGIN_TAG, 0);
-        username = share.getString(SHARE_LOGIN_USERNAME, "");
-        password = share.getString(SHARE_LOGIN_PASSWORD, "");
-        ipaddr = share.getString(SHARE_LOGIN_IP_ADDR, "");
-        Log.d(this.toString(), "userName=" + username + " password=" + password
-                + " IPAddr = " + ipaddr);
-        if (!"".equals(username)) {
-            view_username.setText(username);
-        }
-        if (!"".equals(password)) {
-            view_password.setText(password);
-        }
-        if (!"".equals(ipaddr)) {
-            view_ipaddr.setText(ipaddr);
-        }
-        share = null;
+    private void setData(boolean isRememberMe) {
+        view_username.setText(Constants.LOGIN_NAME);
+        view_password.setText(Constants.LOGIN_PWD);
+        //view_ipaddr.setText(Constants.BASE_IP);
     }
 
+    /**
+     * 获取用户信息
+     */
+    private void getSharedData() {
+        SharedPreferences share = getSharedPreferences(SHARE_LOGIN_TAG, 0);
+        //String ip = share.getString(SHARE_LOGIN_IP_ADDR, "");
+        String username = share.getString(SHARE_LOGIN_USERNAME, "");
+        String password = share.getString(SHARE_LOGIN_PASSWORD, "");
+        if (/*!TextUtils.isEmpty(ip) &&*/ !TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)) {
+            // Constants.BASE_IP = ip;
+            Constants.LOGIN_NAME = username;
+            Constants.LOGIN_PWD = password;
+            hasInfo = true;
+        }
+
+        Log.d(this.toString(), "userName=" + username + " password=" + password
+                + " IPAddr = ");
+        share = null;
+
+    }
+
+    /**
+     * 保存用户信息
+     */
     private void saveSharePreferences(boolean saveIpaddr, boolean saveUserName,
                                       boolean savePassword) {
         SharedPreferences share = getSharedPreferences(SHARE_LOGIN_TAG, 0);
@@ -457,14 +489,55 @@ public class SplashActivity extends Activity {
     private View.OnClickListener submitListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            saveSharePreferences(true, true, true);
-            //            proDialog = ProgressDialog.show(SplashActivity.this, "连接中..",
-            //                    "连接中..请稍后....", true, true);
-            init_layout.setVisibility(View.VISIBLE);
-            Thread loginThread = new Thread(new SplashActivity.LoginFailureHandler());
-            loginThread.start();
+            if (checkData()) {
+                saveSharePreferences(false, true, true);
+                //            proDialog = ProgressDialog.show(SplashActivity.this, "连接中..",
+                //                    "连接中..请稍后....", true, true);
+                init_layout.setVisibility(View.VISIBLE);
+                Thread loginThread = new Thread(new SplashActivity.LoginFailureHandler());
+                loginThread.start();
+            }
+
         }
+
+
     };
+
+    /**
+     * 点击登录的时验证数据是否合格
+     */
+    private boolean checkData() {
+        //String ipaddr = view_ipaddr.getText().toString();
+        String username = view_username.getText().toString();
+        String password = view_password.getText().toString();
+        /*if ("".equals(ipaddr)) {
+            Message message = new Message();
+            Bundle bundle = new Bundle();
+            bundle.putInt("error", -5);
+            message.setData(bundle);
+            loginHandler.sendMessage(message);
+            return false;
+        } else*/
+        if ("".equals(username)) {
+            Message message = new Message();
+            Bundle bundle = new Bundle();
+            bundle.putInt("error", -6);
+            message.setData(bundle);
+            loginHandler.sendMessage(message);
+            return false;
+        } else if ("".equals(password)) {
+            Message message = new Message();
+            Bundle bundle = new Bundle();
+            bundle.putInt("error", -7);
+            message.setData(bundle);
+            loginHandler.sendMessage(message);
+            return false;
+        }
+        //Constants.BASE_IP = ipaddr;
+        Constants.LOGIN_NAME = username;
+        Constants.LOGIN_PWD = password;
+        return true;
+    }
 
     /**
      * 记住密码 checkbox Listener
@@ -473,7 +546,7 @@ public class SplashActivity extends Activity {
         @Override
         public void onClick(View v) {
             if (view_remember.isChecked()) {
-                saveSharePreferences(true, true, true);
+                saveSharePreferences(false, true, true);
             }
         }
     };
@@ -485,7 +558,7 @@ public class SplashActivity extends Activity {
         @Override
         public void onClick(View v) {
             if (view_autologin.isChecked() && !view_remember.isChecked()) {
-                saveSharePreferences(true, true, true);
+                saveSharePreferences(false, true, true);
             }
         }
     };
@@ -529,52 +602,16 @@ public class SplashActivity extends Activity {
     class LoginFailureHandler implements Runnable {
         @Override
         public void run() {
-            ipaddr = view_ipaddr.getText().toString();
-            username = view_username.getText().toString();
-            password = view_password.getText().toString();
+            //Constants.IP_ADDRESS = Constants.BASE_IP + ":6611";
+            Intent it = new Intent(SplashActivity.this, NetWorkService.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("opera", 0);
+            bundle.putString("ipaddr", Constants.IP_ADDRESS);
+            bundle.putString("username", Constants.LOGIN_NAME);
+            bundle.putString("password", Constants.LOGIN_PWD);
+            it.putExtras(bundle);
+            startService(it);
 
-            //            ipaddr = Constants.IP_ADDRESS;
-            //            username = Constants.LOGIN_NAME;
-            //            password = Constants.LOGIN_PWD;
-
-            if ("".equals(ipaddr)) {
-                Message message = new Message();
-                Bundle bundle = new Bundle();
-                bundle.putInt("error", -5);
-                message.setData(bundle);
-                loginHandler.sendMessage(message);
-            } else if ("".equals(username)) {
-                Message message = new Message();
-                Bundle bundle = new Bundle();
-                bundle.putInt("error", -6);
-                message.setData(bundle);
-                loginHandler.sendMessage(message);
-            } else if ("".equals(password)) {
-
-                Message message = new Message();
-                Bundle bundle = new Bundle();
-                bundle.putInt("error", -7);
-                message.setData(bundle);
-                loginHandler.sendMessage(message);
-
-            } else {
-                /*
-                Intent conn = new Intent("com.frameclient.connection");
-				conn.putExtra("ipaddr", ipaddr);
-				sendBroadcast(conn);
-				*/
-                Intent it = new Intent(SplashActivity.this, NetWorkService.class);
-
-                Bundle bundle = new Bundle();
-                bundle.putInt("opera", 0);
-                bundle.putString("ipaddr", ipaddr);
-                bundle.putString("username", username);
-                bundle.putString("password", password);
-                it.putExtras(bundle);
-
-                startService(it);
-
-            }
 
         }
 
