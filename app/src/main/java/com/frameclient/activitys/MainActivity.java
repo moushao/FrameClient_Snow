@@ -33,6 +33,7 @@ import com.frameclient.adapter.CommonListAdapter;
 import com.frameclient.adapter.ResourceAdapter;
 import com.frameclient.adapter.ViewHolder;
 import com.frameclient.utils.ApiRequest;
+import com.frameclient.utils.Constants;
 import com.frameclient.utils.NewsListBean;
 import com.frameclient.utils.ResourceItemInfo;
 import com.frameclient.utils.SoftResource;
@@ -577,7 +578,7 @@ public class MainActivity extends Activity {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int which) {// 确定按钮的响应事件
-                                apiRequest.postAlarm("成都市",1);
+                                apiRequest.postAlarm(Constants.LOGIN_NAME,1);
                             }
 
                         })
@@ -606,7 +607,7 @@ public class MainActivity extends Activity {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int which) {// 确定按钮的响应事件
-                                apiRequest.postAlarm("成都市",2);
+                                apiRequest.postAlarm(Constants.LOGIN_NAME,2);
                             }
 
                         })
@@ -635,7 +636,7 @@ public class MainActivity extends Activity {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int which) {// 确定按钮的响应事件
-                                apiRequest.postAlarm("成都市",3);
+                                apiRequest.postAlarm(Constants.LOGIN_NAME,3);
                             }
 
                         })
@@ -664,7 +665,7 @@ public class MainActivity extends Activity {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int which) {// 确定按钮的响应事件
-                                apiRequest.postAlarm("成都市",4);
+                                apiRequest.postAlarm(Constants.LOGIN_NAME,4);
                             }
 
                         })

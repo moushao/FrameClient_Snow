@@ -196,7 +196,7 @@
                             android:layout_weight="1"
                             android:background="@drawable/sle_btn_bottom"
                             android:padding="10dp"
-                            android:text="112"
+                            android:text="120"
                             android:textColor="@color/white"
                             android:textSize="20sp"/>
 

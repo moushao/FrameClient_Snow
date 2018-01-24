@@ -32,9 +32,9 @@ import com.frameclient.utils.Constants;
 public class SplashActivity extends Activity {
 
 
-    private String username;
-    private String password;
-    private String ipaddr;
+    //    private String username;
+    //    private String password;
+    //    private String ipaddr;
 
     private EditText view_username;
     private EditText view_password;
@@ -49,6 +49,10 @@ public class SplashActivity extends Activity {
     private static final String TAG = "FrmaeDebug";
     private static final int MENU_EXIT = Menu.FIRST - 1;
     private static final int MENU_ABOUT = Menu.FIRST;
+    /**
+     * 判断是否本地有用户信息,如果有,则直接登录,如果没有,则显示登录界面
+     */
+    private boolean hasInfo = false;
 
     /**
      * 用来操作SharePreferences的标识
@@ -303,19 +307,17 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_splash);
         findViewsById();
         setListener();
-        initView(false);
-
+        getSharedData();
         registerBroadcastReceiver();
 
-        //无用信息显示登录界面，有用户信息直接登录
-        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password) || TextUtils.isEmpty(ipaddr)) {
-            view_ipaddr.setText(Constants.IP_ADDRESS);
-            view_username.setText(Constants.LOGIN_NAME);
-            view_password.setText(Constants.LOGIN_PWD);
-            login_layout.setVisibility(View.VISIBLE);
-        } else {
+        //无用户信息显示登录界面，有用户信息直接登录
+        if (hasInfo) {
             init_layout.setVisibility(View.VISIBLE);
             login();
+        } else {
+            setData(false);
+            login_layout.setVisibility(View.VISIBLE);
+
         }
         //
 
@@ -394,27 +396,36 @@ public class SplashActivity extends Activity {
      *
      * @param isRememberMe
      */
-    private void initView(boolean isRememberMe) {
-
-
-        SharedPreferences share = getSharedPreferences(SHARE_LOGIN_TAG, 0);
-        username = share.getString(SHARE_LOGIN_USERNAME, "");
-        password = share.getString(SHARE_LOGIN_PASSWORD, "");
-        ipaddr = share.getString(SHARE_LOGIN_IP_ADDR, "");
-        Log.d(this.toString(), "userName=" + username + " password=" + password
-                + " IPAddr = " + ipaddr);
-        if (!"".equals(username)) {
-            view_username.setText(username);
-        }
-        if (!"".equals(password)) {
-            view_password.setText(password);
-        }
-        if (!"".equals(ipaddr)) {
-            view_ipaddr.setText(ipaddr);
-        }
-        share = null;
+    private void setData(boolean isRememberMe) {
+        view_username.setText(Constants.LOGIN_NAME);
+        view_password.setText(Constants.LOGIN_PWD);
+        view_ipaddr.setText(Constants.BASE_IP);
     }
 
+    /**
+     * 获取用户信息
+     */
+    private void getSharedData() {
+        SharedPreferences share = getSharedPreferences(SHARE_LOGIN_TAG, 0);
+        String ip = share.getString(SHARE_LOGIN_IP_ADDR, "");
+        String username = share.getString(SHARE_LOGIN_USERNAME, "");
+        String password = share.getString(SHARE_LOGIN_PASSWORD, "");
+        if (!TextUtils.isEmpty(ip) && !TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)) {
+            Constants.BASE_IP = ip;
+            Constants.LOGIN_NAME = username;
+            Constants.LOGIN_PWD = password;
+            hasInfo = true;
+        }
+
+        Log.d(this.toString(), "userName=" + username + " password=" + password
+                + " IPAddr = " + ip);
+        share = null;
+
+    }
+
+    /**
+     * 保存用户信息
+     */
     private void saveSharePreferences(boolean saveIpaddr, boolean saveUserName,
                                       boolean savePassword) {
         SharedPreferences share = getSharedPreferences(SHARE_LOGIN_TAG, 0);
@@ -457,14 +468,54 @@ public class SplashActivity extends Activity {
     private View.OnClickListener submitListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            saveSharePreferences(true, true, true);
-            //            proDialog = ProgressDialog.show(SplashActivity.this, "连接中..",
-            //                    "连接中..请稍后....", true, true);
-            init_layout.setVisibility(View.VISIBLE);
-            Thread loginThread = new Thread(new SplashActivity.LoginFailureHandler());
-            loginThread.start();
+            if (checkData()) {
+                saveSharePreferences(true, true, true);
+                //            proDialog = ProgressDialog.show(SplashActivity.this, "连接中..",
+                //                    "连接中..请稍后....", true, true);
+                init_layout.setVisibility(View.VISIBLE);
+                Thread loginThread = new Thread(new SplashActivity.LoginFailureHandler());
+                loginThread.start();
+            }
+
         }
+
+
     };
+
+    /**
+     * 点击登录的时验证数据是否合格
+     */
+    private boolean checkData() {
+        String ipaddr = view_ipaddr.getText().toString();
+        String username = view_username.getText().toString();
+        String password = view_password.getText().toString();
+        if ("".equals(ipaddr)) {
+            Message message = new Message();
+            Bundle bundle = new Bundle();
+            bundle.putInt("error", -5);
+            message.setData(bundle);
+            loginHandler.sendMessage(message);
+            return false;
+        } else if ("".equals(username)) {
+            Message message = new Message();
+            Bundle bundle = new Bundle();
+            bundle.putInt("error", -6);
+            message.setData(bundle);
+            loginHandler.sendMessage(message);
+            return false;
+        } else if ("".equals(password)) {
+            Message message = new Message();
+            Bundle bundle = new Bundle();
+            bundle.putInt("error", -7);
+            message.setData(bundle);
+            loginHandler.sendMessage(message);
+            return false;
+        }
+        Constants.BASE_IP = ipaddr;
+        Constants.LOGIN_NAME = username;
+        Constants.LOGIN_PWD = password;
+        return true;
+    }
 
     /**
      * 记住密码 checkbox Listener
@@ -529,52 +580,16 @@ public class SplashActivity extends Activity {
     class LoginFailureHandler implements Runnable {
         @Override
         public void run() {
-            ipaddr = view_ipaddr.getText().toString();
-            username = view_username.getText().toString();
-            password = view_password.getText().toString();
+            Constants.IP_ADDRESS = Constants.BASE_IP + ":6611";
+            Intent it = new Intent(SplashActivity.this, NetWorkService.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("opera", 0);
+            bundle.putString("ipaddr", Constants.IP_ADDRESS);
+            bundle.putString("username", Constants.LOGIN_NAME);
+            bundle.putString("password", Constants.LOGIN_PWD);
+            it.putExtras(bundle);
+            startService(it);
 
-            //            ipaddr = Constants.IP_ADDRESS;
-            //            username = Constants.LOGIN_NAME;
-            //            password = Constants.LOGIN_PWD;
-
-            if ("".equals(ipaddr)) {
-                Message message = new Message();
-                Bundle bundle = new Bundle();
-                bundle.putInt("error", -5);
-                message.setData(bundle);
-                loginHandler.sendMessage(message);
-            } else if ("".equals(username)) {
-                Message message = new Message();
-                Bundle bundle = new Bundle();
-                bundle.putInt("error", -6);
-                message.setData(bundle);
-                loginHandler.sendMessage(message);
-            } else if ("".equals(password)) {
-
-                Message message = new Message();
-                Bundle bundle = new Bundle();
-                bundle.putInt("error", -7);
-                message.setData(bundle);
-                loginHandler.sendMessage(message);
-
-            } else {
-                /*
-                Intent conn = new Intent("com.frameclient.connection");
-				conn.putExtra("ipaddr", ipaddr);
-				sendBroadcast(conn);
-				*/
-                Intent it = new Intent(SplashActivity.this, NetWorkService.class);
-
-                Bundle bundle = new Bundle();
-                bundle.putInt("opera", 0);
-                bundle.putString("ipaddr", ipaddr);
-                bundle.putString("username", username);
-                bundle.putString("password", password);
-                it.putExtras(bundle);
-
-                startService(it);
-
-            }
 
         }
 

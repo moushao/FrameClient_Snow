@@ -1,9 +1,9 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion 25
     buildToolsVersion '26.0.2'
-
     defaultConfig {
         applicationId "com.frameclient.activitys"
         minSdkVersion 15
@@ -13,20 +13,35 @@ android {
             moduleName "H264Decoder"
         }
     }
-
+    signingConfigs {
+        config {
+            keyAlias 'alias'
+            keyPassword 'pvirtech123'
+            storeFile file('E:/Workspace/Pvirtech/xueliang/laibing/keystore.jks')
+            storePassword 'pvirtech123'
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
-
     sourceSets {
         main {
             jni.srcDirs = ['jniLibs']
         }
     }
-
+    //apk输出名称配置
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "xueliang_laibing_${releaseTime()}.apk"
+        }
+    }
 }
 dependencies {
     compile 'io.reactivex:rxandroid:1.2.1'
@@ -38,6 +53,8 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
 }
 
-
+def releaseTime(){
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
 
 

@@ -48,11 +48,15 @@ public class ApiRequest {
                 .build();
 
         Gson gson = new GsonBuilder().create();
+        StringBuffer baseUrl = new StringBuffer();
+        baseUrl.append("http://");
+        baseUrl.append(Constants.BASE_IP);
+        baseUrl.append(":8081");
         retrofit = new Retrofit.Builder()
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .baseUrl(Constants.BASE_URL)
+                .baseUrl(baseUrl.toString())
                 .build();
 
         apiService = retrofit.create(ApiService.class);
@@ -74,7 +78,7 @@ public class ApiRequest {
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.e("http",e.getMessage()+"");
+                        Log.e("http", e.getMessage() + "");
                         httpResultCallBack.pushAlarmFail();
                     }
 
@@ -85,10 +89,11 @@ public class ApiRequest {
                 });
     }
 
-    public void getNewsList(){
+    public void getNewsList() {
         String json = "{\"code\":0,\"msg\":\"成功\",\"result\":[{\n" +
                 "\"title\":\"全国人民代表大会常务委员会任免名单\",\n" +
-                "\"url\":\"http://m2.people.cn/r/MV8wXzEwMzE5Mzc1XzIwM18xNTE0MzY4MDY2?tt_group_id=6504162017996177933\"\n" +
+                "\"url\":\"http://m2.people.cn/r/MV8wXzEwMzE5Mzc1XzIwM18xNTE0MzY4MDY2?tt_group_id=6504162017996177933" +
+                "\"\n" +
                 "},\n" +
                 "{\n" +
                 "\"title\":\"武警部队归中央军委建制，不再列国务院序列\",\n" +
@@ -113,11 +118,12 @@ public class ApiRequest {
         httpResultCallBack.onNewsListResult(newsListBean.getResult());
     }
 
-    private RequestBody toJson(Map parameters){
-        return RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), new Gson().toJson(parameters));
+    private RequestBody toJson(Map parameters) {
+        return RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), new Gson().toJson
+                (parameters));
     }
 
-    public interface HttpResultCallBack{
+    public interface HttpResultCallBack {
 
         void pushAlarmSuccess();
 
