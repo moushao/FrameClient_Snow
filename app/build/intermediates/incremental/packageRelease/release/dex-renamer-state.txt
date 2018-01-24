@@ -1,4 +1,0 @@
-#Wed Jan 24 09:52:44 CST 2018
-base.0=E\:\\Workspace\\Pvirtech\\xueliang\\Hefei\\app\\build\\intermediates\\transforms\\dex\\release\\0
-renamed.0=classes.dex
-file.0=E\:\\Workspace\\Pvirtech\\xueliang\\Hefei\\app\\build\\intermediates\\transforms\\dex\\release\\0\\classes.dex
