@@ -8,7 +8,8 @@ android {
         applicationId "com.frameclient.activitys"
         minSdkVersion 15
         targetSdkVersion 25
-
+        versionCode 1
+        versionName "1.0.0"
         ndk {
             moduleName "H264Decoder"
         }
@@ -26,6 +27,11 @@ android {
             jni.srcDirs = ['jniLibs']
         }
     }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "xueliang_hefei_${releaseTime() }.apk"
+        }
+    }
 
 }
 dependencies {
@@ -38,6 +44,8 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
 }
 
-
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
 
 

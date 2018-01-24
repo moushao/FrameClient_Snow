@@ -88,33 +88,36 @@ public class ApiRequest {
                     }
                 });
     }
-    //    public void getNewsList() {
-    //        String json = "{\"code\":0,\"msg\":\"成功\",\"result\":[{\n" +
-    //                "\"title\":\"全国人民代表大会常务委员会任免名单\",\n" +
-    //                "\"url\":\"http://m2.people.cn/r/MV8wXzEwMzE5Mzc1XzIwM18xNTE0MzY4MDY2?tt_group_id=6504162017996177933" +
-    //                "\"\n" +
-    //                "},\n" +
-    //                "{\n" +
-    //                "\"title\":\"武警部队归中央军委建制，不再列国务院序列\",\n" +
-    //                "\"url\":\"https://news.qq.com/a/20171227/022792.htm\"\n" +
-    //                "},\n" +
-    //                "{\n" +
-    //                "\"title\":\"全国铁路今起大调图：石济高铁开通 “复兴号”再扩容\",\n" +
-    //                "\"url\":\"http://new.qq.com/omn/20171228A03X0G.html\"\n" +
-    //                "},\n" +
-    //                "{\n" +
-    //                "\"title\":\"烟叶税法、船舶吨税法明年施行 这里面有哪些看点\",\n" +
-    //                "\"url\":\"http://new.qq.com/omn/20171228A03X0G.html\"\n" +
-    //                "},\n" +
-    //                "{\n" +
-    //                "\"title\":\"台媒：岛内“反中”势力又抬头 蔡政府应及早预设“防火墙”\",\n" +
-    //                "\"url\":\"http://new.qq.com/omn/20171228A03X0G.html\"\n" +
-    //                "}\n" +
-    //                "]}";
-    //        Gson gson = new GsonBuilder().create();
-    //        NewsListBean newsListBean = gson.fromJson(json, NewsListBean.class);
-    //
-    //        httpResultCallBack.onNewsListResult(newsListBean.getResult());
+
+    public void getNewsList() {
+        String json = "{\"code\":0,\"msg\":\"成功\",\"result\":[{\n" +
+                "\"title\":\"全国人民代表大会常务委员会任免名单\",\n" +
+                "\"url\":\"http://m2.people.cn/r/MV8wXzEwMzE5Mzc1XzIwM18xNTE0MzY4MDY2?tt_group_id=6504162017996177933" +
+                "\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"title\":\"武警部队归中央军委建制，不再列国务院序列\",\n" +
+                "\"url\":\"https://news.qq.com/a/20171227/022792.htm\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"title\":\"全国铁路今起大调图：石济高铁开通 “复兴号”再扩容\",\n" +
+                "\"url\":\"http://new.qq.com/omn/20171228A03X0G.html\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"title\":\"烟叶税法、船舶吨税法明年施行 这里面有哪些看点\",\n" +
+                "\"url\":\"http://new.qq.com/omn/20171228A03X0G.html\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"title\":\"台媒：岛内“反中”势力又抬头 蔡政府应及早预设“防火墙”\",\n" +
+                "\"url\":\"http://new.qq.com/omn/20171228A03X0G.html\"\n" +
+                "}\n" +
+                "]}";
+        Gson gson = new GsonBuilder().create();
+        NewsListBean newsListBean = gson.fromJson(json, NewsListBean.class);
+
+        httpResultCallBack.onNewsListResult(newsListBean.getResult());
+    }
+
     public void getAllNewsList() {
         apiService.getAllNews().
                 subscribeOn(Schedulers.io())
@@ -138,31 +141,31 @@ public class ApiRequest {
                     }
                 });
     }
-    public void getNewsList(){
-        apiService.getNews().
-                subscribeOn(Schedulers.io())
-                .unsubscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<NewsListBean>() {
-                    @Override
-                    public void onCompleted() {
+    //    public void getNewsList(){
+    //        apiService.getNews().
+    //                subscribeOn(Schedulers.io())
+    //                .unsubscribeOn(Schedulers.io())
+    //                .observeOn(AndroidSchedulers.mainThread())
+    //                .subscribe(new Subscriber<NewsListBean>() {
+    //                    @Override
+    //                    public void onCompleted() {
+    //
+    //                    }
+    //
+    //                    @Override
+    //                    public void onError(Throwable e) {
+    //                        Log.e("http", e.getMessage() + "");
+    //                        httpResultCallBack.getNewsListFail();
+    //                    }
+    //
+    //                    @Override
+    //                    public void onNext(NewsListBean resultBean) {
+    //                        httpResultCallBack.onNewsListResult(resultBean.getResult());
+    //                    }
+    //                });
+    //    }
 
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Log.e("http", e.getMessage() + "");
-                        httpResultCallBack.getNewsListFail();
-                    }
-
-                    @Override
-                    public void onNext(NewsListBean resultBean) {
-                        httpResultCallBack.onNewsListResult(resultBean.getResult());
-                    }
-                });
-    }
-
-//    }
+    //    }
 
     private RequestBody toJson(Map parameters) {
         return RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), new Gson().toJson

@@ -9,6 +9,7 @@ import java.nio.channels.SocketChannel;
 import java.security.NoSuchAlgorithmException;
 import java.util.Iterator;
 
+import com.frameclient.utils.Constants;
 import com.frameclient.utils.LoginRsp;
 import com.frameclient.utils.NotifyInfo;
 import com.frameclient.utils.SoftResource;
@@ -139,7 +140,6 @@ public class NetWorkService extends IntentService {
             default:
                 break;
         }
-
         Looper.loop();
     }
 
@@ -396,7 +396,7 @@ public class NetWorkService extends IntentService {
 
                                             tcp.sendGetResourceMsg(rsp.uid, rsp.source_id, rsp.type);
 
-
+                                            Constants.uuid = rsp.uid;
                                             Intent login_intent = new Intent("com.frameclient.login.rsp");
                                             login_intent.putExtra("error", 0); //登陆成功
                                             sendBroadcast(login_intent);

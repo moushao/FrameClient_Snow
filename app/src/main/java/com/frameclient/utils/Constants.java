@@ -7,6 +7,8 @@ package com.frameclient.utils;
 public class Constants {
     public static String LOGIN_NAME = "sa";
     public static String LOGIN_PWD = "sa";
+    public static String uuid = "";
+    
     /*
     *IP_ADDRESS:视频服务器地址
     *BASE_URL:报警服务器地址
@@ -27,7 +29,8 @@ public class Constants {
 */
 
     //安徽合肥接口
-    public static String IP_ADDRESS = "222.84.119.203:6611";
-    public static String BASE_URL = "http://222.84.119.203:8081";
+    public static String IP_ADDRESS = "114.98.228.210:6611";
+//    public static String IP_ADDRESS = "114.98.228.210:6711";
+    public static String BASE_URL = "http://114.98.228.210:8081";
 
 }
