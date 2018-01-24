@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">雪亮工程</string>
-    <string name="version">V1.1</string>
+    <string name="version">V1.0</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="logo_name">OPENNETSYSTEM</string>
