@@ -85,7 +85,7 @@ ADDED from E:\Workspace\Pvirtech\xueliang\Hefei\app\src\main\AndroidManifest.xml
 activity#com.frameclient.activitys.LoginActivity
 ADDED from E:\Workspace\Pvirtech\xueliang\Hefei\app\src\main\AndroidManifest.xml:32:9-35:73
 	android:screenOrientation
-		ADDED from E:\Workspace\Pvirtech\xueliang\Hefei\app\src\main\AndroidManifest.xml:34:13-49
+		ADDED from E:\Workspace\Pvirtech\xueliang\Hefei\app\src\main\AndroidManifest.xml:34:13-50
 	android:theme
 		ADDED from E:\Workspace\Pvirtech\xueliang\Hefei\app\src\main\AndroidManifest.xml:35:13-71
 	android:name

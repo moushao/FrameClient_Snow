@@ -42,6 +42,8 @@ import com.frameclient.widget.ScrollingTextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.parsers.SAXParser;
+
 public class MainActivity extends Activity {
     private String TAG = "MainActivity";
     //private List<ResourceItemInfo> list = null;
@@ -210,6 +212,7 @@ public class MainActivity extends Activity {
                             .show();
                     break;
             }
+
         }
     };
 
