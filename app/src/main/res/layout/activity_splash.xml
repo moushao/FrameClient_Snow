@@ -26,7 +26,7 @@
             android:gravity="center"
             android:scaleX="1.2"
             android:text="OpenNetSystem"
-            android:textColor="#ed6920 "
+            android:textColor="#ed6920"
             android:textSize="68dp"
             android:textStyle="bold"/>
 
